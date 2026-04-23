@@ -10,5 +10,5 @@ export default function RequireAuth({ children }) {
 
     // If token exists, render the children (protected content)
     // If no token, redirect to /login page
-    return token ? children : <Navigate to="/login" replace />;
+    return token ? children : <Navigate to="/" replace />;
 }
