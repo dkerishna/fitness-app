@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 // useState: to store form data
 // useEffect: to load existing todo data when the component loads
 
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Container } from "react-bootstrap";
 // Bootstrap components for form and button
 
 import { useNavigate, useParams } from "react-router-dom";
@@ -82,94 +82,91 @@ export default function EditTodo() {
     }
 
     return (
-        <Form onSubmit={updateTodo}>
-            <h1 className="my-3">Edit Fitness Task</h1>
+        <Container className="py-4 d-flex justify-content-center">
+            <div style={{ width: "100%", maxWidth: "800px" }}>
+                <Form onSubmit={updateTodo}>
+                    <h1 className="my-3">Edit Fitness Task</h1>
 
-            <Form.Group className="mb-3" controlId="title">
-                <Form.Label>Workout Title</Form.Label>
-                <Form.Control
-                    value={title}
-                    onChange={(event) => setTitle(event.target.value)}
-                    // Update title state when user types
-                    type="text"
-                    required
-                />
-            </Form.Group>
+                    <Form.Group className="mb-3" controlId="title">
+                        <Form.Label>Workout Title</Form.Label>
+                        <Form.Control
+                            value={title}
+                            onChange={(event) => setTitle(event.target.value)}
+                            type="text"
+                            required
+                        />
+                    </Form.Group>
 
-            <Form.Group className="mb-3" controlId="description">
-                <Form.Label>Details</Form.Label>
-                <Form.Control
-                    value={description}
-                    onChange={(event) => setDescription(event.target.value)}
-                    // Update description state as user types
-                    as="textarea"
-                    rows={3}
-                    required
-                />
-            </Form.Group>
+                    <Form.Group className="mb-3" controlId="description">
+                        <Form.Label>Details</Form.Label>
+                        <Form.Control
+                            value={description}
+                            onChange={(event) => setDescription(event.target.value)}
+                            as="textarea"
+                            rows={3}
+                            required
+                        />
+                    </Form.Group>
 
-            <Form.Group className="mb-3" controlId="category">
-                <Form.Label>Category</Form.Label>
-                <Form.Select
-                    value={category}
-                    onChange={(event) => setCategory(event.target.value)}
-                    // Update category when user selects an option
-                    required
-                >
-                    <option value="">Select category</option>
-                    <option value="Cardio">Cardio</option>
-                    <option value="Strength">Strength</option>
-                    <option value="Flexibility">Flexibility</option>
-                </Form.Select>
-            </Form.Group>
+                    <Form.Group className="mb-3" controlId="category">
+                        <Form.Label>Category</Form.Label>
+                        <Form.Select
+                            value={category}
+                            onChange={(event) => setCategory(event.target.value)}
+                            required
+                        >
+                            <option value="">Select category</option>
+                            <option value="Cardio">Cardio</option>
+                            <option value="Strength">Strength</option>
+                            <option value="Flexibility">Flexibility</option>
+                        </Form.Select>
+                    </Form.Group>
 
-            <Form.Group className="mb-3" controlId="date">
-                <Form.Label>Date</Form.Label>
-                <Form.Control
-                    type="date"
-                    value={date}
-                    onChange={(event) => setDate(event.target.value)}
-                    // Update date when user picks date
-                    required
-                />
-            </Form.Group>
+                    <Form.Group className="mb-3" controlId="date">
+                        <Form.Label>Date</Form.Label>
+                        <Form.Control
+                            type="date"
+                            value={date}
+                            onChange={(event) => setDate(event.target.value)}
+                            required
+                        />
+                    </Form.Group>
 
-            <Form.Group className="mb-3" controlId="time">
-                <Form.Label>Time</Form.Label>
-                <Form.Control
-                    type="time"
-                    value={time}
-                    onChange={(event) => setTime(event.target.value)}
-                    // Update time when user picks time
-                    required
-                />
-            </Form.Group>
+                    <Form.Group className="mb-3" controlId="time">
+                        <Form.Label>Time</Form.Label>
+                        <Form.Control
+                            type="time"
+                            value={time}
+                            onChange={(event) => setTime(event.target.value)}
+                            required
+                        />
+                    </Form.Group>
 
-            <Form.Group className="mb-3" controlId="duration">
-                <Form.Label>Duration (minutes)</Form.Label>
-                <Form.Control
-                    type="number"
-                    value={duration}
-                    onChange={(event) => setDuration(event.target.value)}
-                    // Update duration as user types number
-                    min="1"
-                    required
-                />
-            </Form.Group>
+                    <Form.Group className="mb-3" controlId="duration">
+                        <Form.Label>Duration (minutes)</Form.Label>
+                        <Form.Control
+                            type="number"
+                            value={duration}
+                            onChange={(event) => setDuration(event.target.value)}
+                            min="1"
+                            required
+                        />
+                    </Form.Group>
 
-            <Form.Check
-                type="checkbox"
-                id="completed"
-                label="Mark as completed"
-                checked={completed}
-                onChange={(event) => setCompleted(event.target.checked)}
-                // Update completed state when user checks/unchecks
-                className="mb-3"
-            />
+                    <Form.Check
+                        type="checkbox"
+                        id="completed"
+                        label="Mark as completed"
+                        checked={completed}
+                        onChange={(event) => setCompleted(event.target.checked)}
+                        className="mb-3"
+                    />
 
-            <Button variant="primary" type="submit">
-                Update
-            </Button>
-        </Form>
+                    <Button variant="primary" type="submit">
+                        Update
+                    </Button>
+                </Form>
+            </div>
+        </Container>
     );
 }
