@@ -40,10 +40,12 @@ export default function LandingPage() {
                     </Button>
 
                     <Button
-                        variant="success"
-                        size="lg">
+                        variant="secondary"
+                        size="lg"
+                        disabled
+                    >
                         <i className="bi bi-person-plus me-2"></i>
-                        Sign Up
+                        Sign Up (Coming Soon)
                     </Button>
                 </div>
             </Container>
