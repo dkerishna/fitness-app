@@ -47,8 +47,8 @@ export default function Login() {
         }
 
         // Hardcoded credentials check
-        const isCorrectUsername = username === "dineshkerishna@gmail.com";
-        const isCorrectPassword = password === "password";
+        const isCorrectUsername = username === "demo@demo.com";
+        const isCorrectPassword = password === "demo123";
 
         if (isCorrectUsername && isCorrectPassword) {
             // If correct, dispatch login and navigate to /home
@@ -65,6 +65,14 @@ export default function Login() {
             <Card className="p-4 bg-dark text-white shadow-lg" style={{ maxWidth: "400px", width: "100%" }}>
                 <Card.Body>
                     <h1 className="text-center mb-4">Login to your FitQuest account</h1>
+
+                    <div className="mb-4 text-center p-3 border rounded bg-light text-dark">
+                        <small>
+                            <div><strong>Demo Login</strong></div>
+                            <div>Email: demo@demo.com</div>
+                            <div>Password: demo123</div>
+                        </small>
+                    </div>
 
                     <Form>
                         {/* Email input */}
@@ -99,6 +107,18 @@ export default function Login() {
 
                         {/* General login error */}
                         {errors.general && <div className="text-danger mb-3">{errors.general}</div>}
+
+                        <Button
+                            variant="outline-light"
+                            onClick={() => {
+                                setUsername("demo@demo.com");
+                                setPassword("demo123");
+                                setErrors({});
+                            }}
+                            className="w-100 mb-2"
+                        >
+                            Use Demo Credentials
+                        </Button>
 
                         {/* Login button */}
                         <Button
