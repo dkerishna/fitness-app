@@ -85,7 +85,7 @@ export default function EditTodo() {
         <Container className="py-4 d-flex justify-content-center">
             <div style={{ width: "100%", maxWidth: "800px" }}>
                 <Form onSubmit={updateTodo}>
-                    <h1 className="my-3">Edit Fitness Task</h1>
+                    <h1 className="mb-4">Edit Fitness Task</h1>
 
                     <Form.Group className="mb-3" controlId="title">
                         <Form.Label>Workout Title</Form.Label>
@@ -162,7 +162,7 @@ export default function EditTodo() {
                         className="mb-3"
                     />
 
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" className="mt-2">
                         Update
                     </Button>
                 </Form>
